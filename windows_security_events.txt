@@ -1,0 +1,53 @@
+Windows Event ID: 4661
+
+Event source: Windows Security Event Log
+
+Description:
+A handle to an object was requested.
+
+Summary:
+In the context of Windows programming, "A handle to an object was requested" typically refers to an application or a process requesting a reference to a system resource or kernel object. In Windows, many system resources are managed through the use of handles, which are abstract references or pointers to these resources.
+
+Security value:
+In certain conditions, knowing if an application or a process requested access to an object may indicate a potential malicious intent, however, as requests for handles are common for a large number of legit activities, it is unlikely that just this activity will have a significant contribution in identifying malware.
+
+Volume of data:
+This event id has the potential to generate a significant number of log entries and affect a SIEM platform either through high cost of ingestion or requirement of increased processing power.
+
+--------------------------------------------------------------------------------------------------
+
+Windows Event ID: 5145
+
+Event source: Windows Security Event Log
+
+Description:
+A network share object was checked to see whether the client can be granted desired access.
+
+Summary:
+In the context of Windows file access audit, "A network share object was checked to see whether the client can be granted desired access" refers to a security audit event where the operating system evaluates whether a user or a client trying to access a network share has the necessary permissions to do so.
+
+Security value:
+In certain conditions, knowing if an application, a process or a user requested access to a network share may indicate a potential malicious intent (i.e. scanning for shares with weak permissions). Some legit applications do scan network shares as part of their normal activity and a large number of events may actually indicate such an application as an experienced malicious actor would not perform mass scans.
+
+Volume of data:
+This event id has the potential to generate a significant number of log entries and affect a SIEM platform either through high cost of ingestion or requirement of increased processing power.
+
+--------------------------------------------------------------------------------------------------
+
+Windows Event ID: 4663
+
+Event source: Windows Security Event Log
+
+Description:
+An attempt was made to access an object.
+
+Summary:
+In the context of Windows security auditing, the event "An attempt was made to access an object" typically signifies that the operating system has logged an event where a user or process tried to access a secured object, such as a file, directory, registry key, or other system resources. This is often logged when Object Access Auditing is enabled.
+
+Security value:
+In certain conditions, knowing if an application, a process or a user tried to access an object (an object in this context can be any securable system resource, such as files, folders, registry keys, printers, or other system components that have security descriptors) may indicate a potential malicious intent however any resource is created with the intent of being used (accessed) so this event has the potential to generate a very large number of events just part of the normal Windows activity so finding malicious ones could be very difficult.
+
+Volume of data:
+This event id has the potential to generate a significant number of log entries and affect a SIEM platform either through high cost of ingestion or requirement of increased processing power.
+
+--------------------------------------------------------------------------------------------------
